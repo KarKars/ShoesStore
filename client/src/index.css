@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .App {
+    @apply min-h-screen bg-indigo-100 flex flex-col justify-center space-y-24 items-center;
+  }
+  .Nav {
+    @apply flex space-x-1 justify-center -mt-10;
+  }
+  .btn-nav {
+    @apply text-xl font-medium text-gray-700 hover:text-indigo-500 focus:text-indigo-800 hover:border-b-indigo-500 focus:border-b-2 focus:border-b-indigo-500 cursor-pointer p-2 duration-200 border-b-2 border-b-transparent;
+  }
+  .Form-container {
+    @apply min-h-fit bg-white w-2/3 shadow-lg rounded max-w-lg;
+  }
+  .title {
+    @apply h-14 bg-indigo-500 w-full rounded scale-95 -translate-y-4 flex justify-center items-center text-2xl text-white font-mono;
+  }
+  .Form {
+    @apply min-h-max grid grid-flow-row justify-items-center;
+  }
+  .main-Form {
+    @apply grid grid-flow-row sm:grid-cols-2;
+  }
+  .Input {
+    @apply bg-gray-100 max-w-md w-full p-2 outline-none border-b-2 border-b-transparent focus:border-b-2 focus:border-indigo-500 duration-200 ease-linear rounded;
+  }
+  .btn-Form {
+    @apply bg-indigo-500 hover:shadow-lg text-white font-mono text-lg p-2 rounded my-3;
+  }
+  .List {
+    @apply w-10/12 my-3;
+  }
+  .List-title-container {
+    @apply grid w-full grid-flow-col grid-cols-5 my-2;
+  }
+  .List-header {
+    @apply text-sm text-indigo-900 font-bold;
+  }
+  .List-item-container {
+    @apply grid w-full grid-flow-col grid-cols-5 hover:bg-blue-100 py-1;
+  }
+  .btn-container {
+    @apply justify-end flex space-x-1;
+  }
+  .btn {
+    @apply p-1 rounded;
+  }
+  .success {
+    @apply hover:bg-green-300;
+  }
+  .danger {
+    @apply hover:bg-red-300;
+  }
+}
