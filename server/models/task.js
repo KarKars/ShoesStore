@@ -11,6 +11,7 @@ const TaskSchema = new mongoose.Schema({
   },
   price: { type: Number, required: true },
   size: { type: Number, required: true },
+  date: { type: String },
 });
 
 const task = mongoose.model("task", TaskSchema);

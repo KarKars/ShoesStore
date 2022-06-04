@@ -3,7 +3,14 @@ import ItemSold from "./ItemSold";
 import axiosClient from "../baseUrl/root";
 
 const Form = () => {
-  const [sell, setSell] = useState({ brand: "", model: "", price: "", size: "" });
+  const date = new Date();
+  const [sell, setSell] = useState({
+    date: new Date().toLocaleDateString(),
+    brand: "",
+    model: "",
+    price: "",
+    size: "",
+  });
   const [alert, setAlert] = useState({ show: true, mssg: "", status: "" });
   const [itemID, setItemID] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
@@ -43,6 +50,7 @@ const Form = () => {
       model: specifiedItem.model,
       size: specifiedItem.size,
       price: specifiedItem.price,
+      date: specifiedItem.date,
     });
     setItemID(id);
     setIsEditing(true);
@@ -75,6 +83,7 @@ const Form = () => {
           if (item.id === itemID) {
             return {
               ...item,
+              date: sell.date,
               model: sell.model,
               brand: sell.brand,
               size: sell.size,
@@ -87,6 +96,7 @@ const Form = () => {
       setIsEditing(false);
       setItemID(null);
       changeForm();
+      console.log(list);
     } else if (sell.brand && sell.model && sell.price && sell.size) {
       setList([...list, { id: new Date().getTime().toString(), ...sell }]);
       console.log(list);
